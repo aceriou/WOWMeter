@@ -375,7 +375,7 @@ if ( $no_script != 1 ) {
                                                 FROM    wow
                                                 GROUP   BY wow_to
                                             ) b ON  a.id = b.wow_to
-                                            ORDER   BY b.TotalCount DESC, a.id ASC LIMIT 0,20" );
+                                            ORDER   BY b.TotalCount DESC, a.id ASC LIMIT 0,15" );
         ?>
         <strong><?php echo $getusers_number; ?></strong> users registered,<br>
         <strong><?php echo $getwows_number_all; ?></strong> wows given,<br>
