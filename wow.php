@@ -17,6 +17,7 @@ mysqli_query ( wow (  ),'SET COLLATION_CONNECTION=utf8_general_ci;');
 
 # Constants
 define ( 'SITE_NAME', 'WOWMeter' );
+define ( 'CONTACT', 'preston@cammarata.info' );
 
 define ( 'USERNAME_MAX', 20 );
 define ( 'USERNAME_MIN', 3 );
