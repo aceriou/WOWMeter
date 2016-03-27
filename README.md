@@ -28,3 +28,10 @@ WOWMeter also has server scripts for a few Linux distros that can enable you to 
 
 # License
 View the LICENSE file for that!
+
+# New Repo Changes
++ All hashed strings have converted from sha256 to sha512.
++ All PHP and some JS has been reworked for performance.
++ New fonts and images.
++ Better security, improved techniques for functions.
++ More...
