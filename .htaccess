@@ -1,0 +1,75 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{HTTP:VIA}                 !^$ [OR]
+RewriteCond %{HTTP:FORWARDED}           !^$ [OR]
+RewriteCond %{HTTP:USERAGENT_VIA}       !^$ [OR]
+RewriteCond %{HTTP:X_FORWARDED_FOR}     !^$ [OR]
+RewriteCond %{HTTP:PROXY_CONNECTION}    !^$ [OR]
+RewriteCond %{HTTP:XPROXY_CONNECTION}   !^$ [OR]
+RewriteCond %{HTTP:HTTP_PC_REMOTE_ADDR} !^$ [OR]
+RewriteCond %{HTTP:HTTP_CLIENT_IP}      !^$
+RewriteRule ^(.*)$ - [F]
+RewriteRule ^sig/(.*)$ image_generate.php?wow=$1 [L,QSA]
+RewriteRule ^\$(.*)$ image_generate.php?wow=$1 [L,QSA]
+RewriteRule ^user/(.*)$ give.php?wow=$1 [L,QSA]
+RewriteRule ^@(.*)$ give.php?wow=$1 [L,QSA]
+<Files "sftp-config.json"> # prohibit access to sftp-config.json because it contains FTP credentials 
+     Order allow,deny
+     Deny from all
+</Files>
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+ErrorDocument 503 /503.php
+Options -Indexes
+# 2014 Micro Blacklist
+<IfModule mod_setenvif.c>
+	Order Allow,Deny
+	Allow from all
+	Deny from 123.151.39.
+	Deny from 77.172.210.
+	Deny from 174.94.131.
+	Deny from 89.238.137.59
+	Deny from 212.90.148.101
+	Deny from 91.207.61.129
+	Deny from 202.46.52.120
+	Deny from 128.73.60.194
+	Deny from 68.108.17.141
+	Deny from 27.54.93.178
+	Deny from 194.9.94.213
+	Deny from 122.166.169.127
+	Deny from 96.9.163.49
+	Deny from 54.229.73.40
+	Deny from 203.109.158.201
+	Deny from 46.105.113.8
+	Deny from 183.60.244.
+	Deny from 54.232.102.193
+	Deny from 195.157.124.186
+	Deny from 118.39.113.219
+	Deny from 27.255.56.87
+	Deny from 69.161.138.1
+	Deny from 192.96.204.42
+	Deny from 178.63.52.200
+	Deny from 27.252.92.103
+	Deny from 37.59.65.58
+	Deny from 186.202.126.94
+	Deny from 186.213.72.146
+	Deny from 186.219.44.6
+</IfModule>
+<IfModule mod_rewrite.c>
+	RewriteCond %{HTTP_HOST} (.*)\.crimea\.com [NC,OR]
+	RewriteCond %{HTTP_HOST} s368\.loopia\.se [NC,OR]
+	RewriteCond %{HTTP_HOST} kanagawa\.ocn [NC,OR]
+	RewriteCond %{HTTP_HOST} g00g1e [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} (ia_archiver|g00g1e|seekerspider|siclab|spam|sqlmap) [NC]
+	RewriteRule .* - [F,L]
+</IfModule>
+<IfModule mod_alias.c>
+	RedirectMatch 403 router\.php
+	RedirectMatch 403 /\)\.html\(
+</IfModule>
+<IfModule mod_rewrite.c>
+	RewriteCond %{QUERY_STRING} http\:\/\/www\.google\.com\/humans\.txt\? [NC]
+	RewriteRule .* - [F,L]
+</IfModule>
