@@ -82,7 +82,7 @@ if ( $login_required )
 
 # Functions
 function doSafe ( $string ) {
-  return urlencode ( htmlentities ( mysqli_real_escape_string ( wow ( ), $string ) ) );
+  return htmlentities ( mysqli_real_escape_string ( wow ( ), $string ) );
 }
 
 function doEmailCheck( $email ) {
