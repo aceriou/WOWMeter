@@ -88,7 +88,7 @@ $( document ).ready ( function ( ) {
     };
     $.ajax ({
       type: "POST",
-      url: "give_process.php",
+      url: "/give_process.php",
       data: form_data,
       beforeSend: function ( )
       {
