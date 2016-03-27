@@ -16,7 +16,7 @@ $bgcolors = array (
         "fuchsia" => "F58FE1",
         "purple"  => "B48FF5",
         "gray"    => "778899",
-			  "rainbow" => "F5928F"
+	"rainbow" => "F5928F"
 );
 
 if ( isset ( $bgcolors[$user['bg_color']] ) ) {
