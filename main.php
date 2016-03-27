@@ -27,10 +27,10 @@ if ( $no_script != 1 ) {
     function changelang ( lang ) {
         var laang = lang;
 
-        $( "#bbcode-code" ).html ( "[url=http://wowmeter.us/@<?php echo $username; ?>"+lang+"][img]http://wowmeter.us/$<?php echo $username; ?>"+lang+"[/img][/url]" );
-        $( "#html-code" ).html ( "&lt;a href=\"http://wowmeter.us/@<?php echo $username; ?>"+lang+"\" target=\"_blank\"&gt;&lt;img src=\"http://wowmeter.us/$<?php echo $username; ?>"+lang+"\" alt=\"Give <?php echo $username; ?> a wow\"/&gt;&lt;/a&gt;" );
-        $( "#direct-code" ).attr ( "value", "http://wowmeter.us/@<?php echo $username; ?>"+lang );
-        $( "#sn-code" ).attr ( "value", "[wow=<?php echo $username; ?>"+lang+"]" );
+        $( "#bbcode-code" ).html ( "[url=http://wowmeter.us/@<?php echo $username; ?>?lang="+lang+"][img]http://wowmeter.us/$<?php echo $username; ?>?lang="+lang+"[/img][/url]" );
+        $( "#html-code" ).html ( "&lt;a href=\"http://wowmeter.us/@<?php echo $username; ?>?lang="+lang+"\" target=\"_blank\"&gt;&lt;img src=\"http://wowmeter.us/$<?php echo $username; ?>?lang="+lang+"\" alt=\"Give <?php echo $username; ?> a wow\"/&gt;&lt;/a&gt;" );
+        $( "#direct-code" ).attr ( "value", "http://wowmeter.us/@<?php echo $username; ?>?lang="+lang );
+        $( "#sn-code" ).attr ( "value", "[wow=<?php echo $username; ?>?lang="+lang+"]" );
 
         var lang2;
 
