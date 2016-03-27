@@ -19,8 +19,8 @@ $bgcolors = array (
 			  "rainbow" => "F5928F"
 );
 
-if ( isset ( $bgcolors[$wow['bg_color']] ) ) {
-  echo "<style type='text/css'>body{ background-color: #" . $bgcolors[$wow['bg_color']] . " !important;</style>";
+if ( isset ( $bgcolors[$user['bg_color']] ) ) {
+  echo "<style type='text/css'>body{ background-color: #" . $bgcolors[$user['bg_color']] . " !important;</style>";
 }
 
 switch ( $_GET['lang'] ) {
