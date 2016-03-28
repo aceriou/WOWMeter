@@ -27,8 +27,8 @@ require_once 'wow.php';
 		  "blue"    => "8FAEF5",
 		  "fuchsia" => "F58FE1",
 		  "purple"  => "B48FF5",
-			"gray"    => "778899",
-			"rainbow" => "F5928F"
+		  "gray"    => "778899",
+		  "rainbow" => "F5928F"
 	  );
     
 ?>
