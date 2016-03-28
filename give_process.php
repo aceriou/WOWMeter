@@ -9,6 +9,15 @@ function doTorRequest ( ) {
   return gethostbyname ( $hostname ) == "127.0.0.2";
 } 
 
+function doProxy ( ) {
+  if ( @file_get_contents ( "http://www.shroomery.org/ythan/proxycheck.php?ip=$_SERVER[REMOTE_ADDR]" ) != "Y" ) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+
 # Language
 switch ( $_POST['lang'] ) {
     case "fr":
@@ -87,7 +96,7 @@ if ( isset ( $_POST['token'] ) && isset ( $_POST['wow'] ) ) {
     }
 
     # Check if the WOWRequest is from a Tor connection
-    else if ( doTorRequest ( ) ) {
+    else if ( doTorRequest ( ) || doProxy ( ) ) {
         die ( "<h4>Sorry, we have detected that your connection routed through a Tor node,<br>so we blocked you from<br>giving a wow in order to<br>stop people from cheating.</h4><script>$(\".progress-bar\").toggleClass(\"progress-bar-success progress-bar-danger\")</script><span class='wow one'></span><span class='wow twosad'></span><span class='wow threesad'></span><span class='wow four'></span><style>body:before{background: url(../images/saddoge.png)</style>" );
     }
 
