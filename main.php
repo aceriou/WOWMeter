@@ -1,4 +1,4 @@
-<a href="https://github.com/aceriou/WOWMeter"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+<!--<a href="https://github.com/aceriou/WOWMeter"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>-->
 
 <div class="box small no-title headline" style="padding: 5px;display: block">
         <strong>March 27th 2016:</strong> WOWMeter is back, with a brand new codebase found on the GitHub page :) 
@@ -410,6 +410,9 @@ if ( $no_script != 1 ) {
             if( $leaderboard['is_banned'] == 1)
                 echo "</s>";
             
+            if ( $leaderboard['wow_count'] == "" )
+              $leaderboard['wow_count'] = 0;
+          
             echo "</span></td><td style='text-align:right'>".$leaderboard["wow_count"]." wows</td></tr>";
         }
         ?>
@@ -421,6 +424,8 @@ if ( $no_script != 1 ) {
   
 <h6 style="margin-bottom:30px;color:#424854">
   <a href="/tos.php">Terms of Service</a><br>
+  <a href="http://github.com/aceriou/WOWMeter">Source code</a><br>
+  <a href="mailto:<?php echo CONTACT; ?>">Contact</a><br><br>
   <?php echo SITE_NAME; ?> is &copy; by 
   <a href="http://cammarata.info">Preston Cammarata</a>, <?php echo date ( "Y" ); ?>.<br>
   Made in Rhode Island<br>
