@@ -1,5 +1,5 @@
 # WOWMeter
-WOWMeter is a click-my-signature website based off the Doge meme. It was started in 2014 by Erman Sayin, but abandoned a year later, picked up again by Preston Cammarata a few months later, anmd sadly closed after a few months, and now it's finally back for good, with a brand new backend.
+WOWMeter is a click-my-signature website based off the Doge meme. It was started in 2014 by Erman Sayin, but abandoned a year later, picked up again by Preston Cammarata a few months later, and sadly closed after a few months, and now it's finally back for good, with a brand new backend.
 
 Note: WOWMeter is not finished, and we accept contributions :) We will post coding guidelines in a file later.
 
