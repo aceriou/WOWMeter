@@ -1,7 +1,7 @@
 <!--<a href="https://github.com/aceriou/WOWMeter"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>-->
 
 <div class="box small no-title headline" style="padding: 5px;display: block">
-        <strong>March 27th 2016:</strong> WOWMeter is back, with a brand new codebase found on the GitHub page :) 
+        <strong>March 31th 2016:</strong> WOWRanks were added omg. Japanese signature is not working for the time being.
 </div>
 
 <?php
@@ -276,11 +276,25 @@ if ( $no_script != 1 ) {
         if ( $city != "" ) { $city .= ", "; } else { $city == ""; }
         if ( $state != "" ) { $state .= ", <br>"; } else { $state == ""; }
         if ( $country_name == "" ) $country_name = "Unknown";
-    
+          
+        $wow_rank_two = "";
+        if ( $wow_number >= 0 && $wow_number < 20 )
+          $wow_rank = "not very";
+        if ( $wow_number >= 20 && $wow_number < 40 )
+          $wow_rank = "such";
+        if ( $wow_number >= 40 && $wow_number < 60 )
+          $wow_rank = "much";
+        if ( $wow_number >= 60 && $wow_nu8mber < 80 )
+          $wow_rank = "very";
+        if ( $wow_number >= 100 ) {
+          $wow_rank = "very much";
+          $wow_rank_two = " omg";
+        }
+          
         ?>
         
         <p>
-            You have <strong><?php echo $wow_number; ?></strong> wows!
+            You have <strong><?php echo $wow_number; ?></strong> wows! <strong><?php echo $wow_rank; ?></strong> wow<?php echo $wow_rank_two; ?>.  
         </p>
         <p>
             Your last wow <?php if ( $wow_number == 0 ) { echo "was <strong title=':('>never given</strong>"; } else { echo "was given <br><strong title='".$wow['wow_date']."'>".nicetime ( $wow['wow_date'] )."</strong>";
@@ -424,8 +438,8 @@ if ( $no_script != 1 ) {
   
 <h6 style="margin-bottom:30px;color:#424854">
   <a href="/tos.php">Terms of Service</a><br>
-  <a href="http://github.com/aceriou/WOWMeter">Source code</a><br>
-  <a href="mailto:<?php echo CONTACT; ?>">Contact</a><br><br>
+  <a href="http://github.com/aceriou/WOWMeter">Contribute / Source Code</a><br>
+  <a href="mailto:<?php echo CONTACT; ?>">Contact us</a><br><br>
   <?php echo SITE_NAME; ?> is &copy; by 
   <a href="http://cammarata.info">Preston Cammarata</a>, <?php echo date ( "Y" ); ?>.<br>
   Made in Rhode Island<br>
