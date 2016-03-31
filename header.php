@@ -13,6 +13,7 @@ require_once 'wow.php';
   <meta name="keywords" content="cute,dog,doge,dogs,funny,kawaii,net,tk,weird,wow,wowmeter">
   <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="/css/main.css" type="text/css" />
+  <link rel="shortcut icon" href="/images/og_image.png">
   <script src="/js/main.js?v=2"></script>
 </head>
   
