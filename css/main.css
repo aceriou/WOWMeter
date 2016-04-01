@@ -112,7 +112,7 @@ img{
 	position: absolute;
 	height: 20px;
 	pointer-events: none;
-	background: url(images/wow.png);
+	background: url(/images/wow.png);
 	z-index: 1
 }
 .wow.one {
