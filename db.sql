@@ -15,6 +15,7 @@ CREATE TABLE `users` (
   `password` varchar(60000) NOT NULL,
   `email` varchar(45) NOT NULL,
   `ip` varchar(45) NOT NULL,
+  `new_ip` varchar(45) NOT NULL,
   `regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_banned` int(1) NOT NULL DEFAULT '0',
   `oldusrname` varchar(20) DEFAULT NULL,
