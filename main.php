@@ -237,6 +237,7 @@ if ( $no_script != 1 ) {
                                                        FROM    wow
                                                        GROUP   BY wow_to
                                                    ) b ON  a.id = b.wow_to
+                                                   WHERE b.TotalCount > 10
                                                    ORDER BY RAND(), b.TotalCount LIMIT 6" );
 
         while ( $randomuser = mysqli_fetch_assoc ( $randomuser_sql ) ) {
