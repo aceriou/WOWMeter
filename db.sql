@@ -11,20 +11,21 @@ USE `wow`;
 
 CREATE TABLE `users` (
   `id` int(45) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(60000) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `ip` varchar(45) NOT NULL,
-  `new_ip` varchar(45) NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `email` text NOT NULL,
+  `ip` text NOT NULL,
   `regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_banned` int(1) NOT NULL DEFAULT '0',
-  `oldusrname` varchar(20) DEFAULT NULL,
+  `oldusrname` text,
   `sig_bg` int(1) NOT NULL DEFAULT '1',
   `sig_font` int(1) NOT NULL DEFAULT '1',
   `usrname_color` varchar(6) NOT NULL DEFAULT 'ffffff',
   `bg_color` varchar(10) NOT NULL DEFAULT 'orange',
+  `new_ip` text NOT NULL,
+  `password_token` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 CREATE TABLE `wow` (
