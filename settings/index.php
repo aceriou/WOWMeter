@@ -294,7 +294,7 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
     <li><a href="javascript:change_bgcolor('blue');void(0)" title="Blue"><div style="background:#8FAEF5;padding:1px 3px;color:#fff;border:solid 1px #7893CC;border-radius:2px;width:100%">Blue</div></a></li>
     <li><a href="javascript:change_bgcolor('fuchsia');void(0)" title="Fuchsia"><div style="background:#F58FE1;padding:1px 3px;color:#fff;border:solid 1px #CC78BD;border-radius:2px;width:100%">Fuchsia</div></a></li>
     <li><a href="javascript:change_bgcolor('purple');void(0)" title="Purple"><div style="background:#B48FF5;padding:1px 3px;color:#fff;border:solid 1px #9578CC;border-radius:2px;width:100%">Purple</div></a></li>
-    <li><a href="javascript:change_bgcolor('gray');void(0)" title="Gray"><div style="background:#778899;padding:1px 3px;color:#fff;border:solid 1px #000000;border-radius:2px;width:100%">Gray</div></a></li>
+    <li><a href="javascript:change_bgcolor('gray');void(0)" title="Gray"><div style="background:#778899;padding:1px 3px;color:#fff;border:solid 1px #677482;border-radius:2px;width:100%">Gray</div></a></li>
     <li><a href="javascript:change_bgcolor('rainbow');void(0)" title="Rainbow"><div style="background:#F5928F;padding:1px 3px;color:#fff;border:solid 1px #CC7978;border-radius:2px;width:100%">Rainbow</div></a></li>
   </ul>
 </div></td></tr>
