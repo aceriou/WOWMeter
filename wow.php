@@ -6,7 +6,7 @@
 
 # Configuration
 $start = microtime( true );
-header ( 'content-type: text/html; charset=utf-8' );
+header('content-type: text/html; charset=utf-8');
 mb_internal_encoding ( "UTF-8" );
 date_default_timezone_set ( 'America/New_York' );
 @session_start ( );
