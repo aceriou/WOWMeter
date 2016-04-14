@@ -186,7 +186,7 @@ function setFont( $f )
              1 
         ),
         "jp" => array( # Japanese
-             3 
+             3
         ),
         "nl" => array( # Dutch
              1,
@@ -297,7 +297,7 @@ function getTrans( $str )
         "es" => array(
             "hasCollected" => "ha colectado " . $getWows['c'] . " wows.",
             "clickHere" => "¡Da click aquí para darle un wow!",
-            "fontSize" => 10 
+            "fontSize" => 6 
         ),
         "de" => array(
             "hasCollected" => "hat " . $getWows['c'] . " wows gesammelt.",
