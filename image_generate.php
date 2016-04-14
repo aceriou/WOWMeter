@@ -151,7 +151,7 @@ function setFont( $f )
     $fonts     = array(
          1 => "fonts/comic.ttf",             # Comic Sans
          2 => "fonts/Hand_Of_Sean_Demo.ttf", # Hand of Sean
-         3 => "fonts/hc-too5.ttf",           # Maru Gothic (Japanese only)
+         3 => "fonts/keifont.ttf",           # Maru Gothic (Japanese only)
          4 => "fonts/Pacifico.ttf",          # Pacifico
          5 => "fonts/Chewy.ttf"
     );
