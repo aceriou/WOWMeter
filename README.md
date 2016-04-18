@@ -4,6 +4,8 @@ WOWMeter is a click-my-signature website based off the Doge meme. It was started
 Note: WOWMeter is not finished, and we accept contributions :) We will post coding guidelines in a file later.
 
 # Setting up
+(sorry that some files have 2 space tabs and others have 4 space tabs. used two editors while making this, i will eventually switch to 4 space tabs throughout every file soon)
+
 wow.php is the configuration file that is included in every page, unless the header.php file is doing it for you.
 
 Fill out a random string for the "$salt" variable in wow.php, make it something long, random and unique. This improves security, but make sure to never change it, or all hashed content will be forever lost.
