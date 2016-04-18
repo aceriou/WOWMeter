@@ -16,17 +16,18 @@ if ( !isset ( $_POST['submit'] ) ) {
 # Variables and Array
 $background     = doSafe ( $_POST['bg'] );
 $username_color = doSafe ( $_POST['usrname_color'] );
+$text_color     = doSafe ( $_POST['text_color'] );
 $font           = doSafe ( $_POST['font'] );
 $bg_color       = "orange";
 
 $bgcolors = array(
-  "orange",
-  "red",
-  "lime",
-  "aqua",
-  "blue",
-  "fuchsia",
-  "purple",
+  	"orange",
+  	"red",
+  	"lime",
+  	"aqua",
+  	"blue",
+  	"fuchsia",
+  	"purple",
 	"gray",
 	"rainbow"
 );
@@ -43,11 +44,12 @@ if ( !is_numeric ( $font ) || $font < 1 || $font > 5 || !is_numeric ( $backgroun
 # Query
 $setbg            = mysqli_query ( wow ( ), "UPDATE users SET sig_bg = '$background' WHERE username = '$username'" );
 $setusrname_color = mysqli_query ( wow ( ), "UPDATE users SET usrname_color = '$username_color' WHERE username = '" . $username . "'" );
+$settext_color    = mysqli_query ( wow ( ), "UPDATE users SET text_color = '$text_color' WHERE username = '" . $username . "'" );
 $setfont          = mysqli_query ( wow ( ), "UPDATE users SET sig_font = '$font' WHERE username = '" . $username . "'" );
 $setbg_color      = mysqli_query ( wow ( ), "UPDATE users SET bg_color = '$bg_color' WHERE username = '$username'" );
 
 # Get out of here you bitch
-if ( !$setusrname_color || !$setbg || !$setfont || !$setbg_color ) {
+if ( !$setusrname_color || !$settext_color || !$setbg || !$setfont || !$setbg_color ) {
   header ( "Location: ../settings/index.php?alert=error" );
 } else {
 	header( "Location: ../settings/index.php?alert=success" );
