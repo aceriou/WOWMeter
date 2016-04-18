@@ -5,30 +5,31 @@ require_once 'wow.php';
 header( 'Content-Type: image/png' );
 
 # Create the image
-$im = setBackground( 5 );
+$im  = setBackground ( 5 );
+$url = false;
 
 # Turn on alpha
-imagealphablending( $im, true );
-imagesavealpha( $im, true );
+imagealphablending ( $im, true );
+imagesavealpha ( $im, true );
 
 # Set default font
-setFont( 2 );
+setFont ( 2 );
 if ( $_GET['debug'] == 1 ) {
     $im = setBackground( 1 );
-    doImage();
+    doImage ( );
 }
 
 # Get user data and wows
-$getUser = doMysql( "SELECT * FROM users WHERE username='" . doSafe ( $_GET['wow'] ) . "' OR oldusrname='" . doSafe ( $_GET['wow'] ) . "'" );
-$getWows = doMysql( "SELECT * FROM wow WHERE wow_to='" . doSafe ( $getUser['r']['id'] ) . "'" );
+$getUser = doMysql ( "SELECT * FROM users WHERE username='" . doSafe ( $_GET['wow'] ) . "' OR oldusrname='" . doSafe ( $_GET['wow'] ) . "'" );
+$getWows = doMysql ( "SELECT * FROM wow WHERE wow_to='" . doSafe ( $getUser['r']['id'] ) . "'" );
 
 # Check if user exists, if not, display a message
 if ( $getUser['c'] != 1 || preg_match( '/[^\w-]+/i', $_GET['wow'] ) ) {
-    drawText( "a", 16, "User not found :(", NULL, true );
-    drawText( "a", 36, "Register to wowmeter.us to", NULL, true );
-    drawText( "a", 56, "get your own WOWMeter!", NULL, true );
-    drawText( 106, 36, "wowmeter.us", alloColor( 66, 66, 202, 20 ), false );
-    doImage();
+    drawText ( "a", 16, "User not found :(", NULL, true );
+    drawText ( "a", 36, "Register to wowmeter.us to", NULL, true );
+    drawText ( "a", 56, "get your own WOWMeter!", NULL, true );
+    drawText ( 106, 36, "wowmeter.us", alloColor( 66, 66, 202, 20 ), false );
+    doImage ( );
 }
 
 # Check if user is banned, if it is, display a message
@@ -36,39 +37,50 @@ if ( $getUser['r']['is_banned'] == 1 ) {
     drawText( "a", 16, $getUser['r']['username'], NULL, true );
     drawText( "a", 36, "is banned from", NULL, true );
     drawText( "a", 56, "WOWMeter.us", NULL, true );
-    doImage();
+    doImage ( );
 }
 # Change the font into the user's preference
 setFont( $getUser['r']['sig_font'] );
 
 # Chance the background into the user's preference
-$im = setBackground( $getUser['r']['sig_bg'], $getUser['r']['bg_color'] );
+if ( empty ( $getUser['r']['sig_url'] ) ) {
+    $im = setBackground( $getUser['r']['sig_bg'], $getUser['r']['bg_color'] );
+} else {
+    $url = true;
+        $im  = setBackground( $getUser['r']['sig_url'], $getUser['r']['bg_color'] );
+}
 
 # Draw the text
-if ( $_GET['mask'] != 1 ) # Only draw the username when the mask isn't applied
+if ( $_GET['mask'] != 1 ) { # Only draw the username when the mask isn't applied
     drawText( "a", 16, $getUser['r']['username'], alloColor( $getUser['r']['usrname_color'], true ) );
-
-drawText( "a", 36, getTrans( "hasCollected" ), NULL, true ); # has collected %c% wows.
-drawText( "a", 56, getTrans( "clickHere" ), NULL, true ); # Click here to give a wow!
+    drawText ( "a", 36, getTrans ( "hasCollected" ), alloColor( $getUser['r']['text_color'], true ), true ); # has collected %c% wows.
+    drawText ( "a", 56, getTrans ( "clickHere" ), alloColor( $getUser['r']['text_color'], true ), true ); # Click here to give a wow!
+}
 
 if ( $_GET['mask'] == 1 ) { # Apply a mask if it's set
     # Create the mask
-    $mask = imagecreatetruecolor( 240, 66 );
-    imagefilledrectangle( $mask, 0, 0, 240, 66, alloColor( "FFFFFF" ) );
+    $mask = imagecreatetruecolor ( 240, 66 );
+    imagefilledrectangle ( $mask, 0, 0, 240, 66, alloColor( "FFFFFF" ) );
     # Shadow
-    drawText( "a", 17, $getUser['r']['username'], alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $im );
+    drawText ( "a", 17, $getUser['r']['username'], alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $im );
+    drawText ( "a", 36, getTrans ( "hasCollected" ), alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $im );
+    drawText ( "a", 56, getTrans ( "clickHere" ), alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $im );
+    
     # Text in the mask
-    drawText( "a", 16, $getUser['r']['username'], alloColor( "000001" ), false, NULL, 12, 0, $mask );
+    drawText ( "a", 16, $getUser['r']['username'], alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $mask );
+    drawText ( "a", 36, getTrans ( "hasCollected" ), alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $mask );
+    drawText ( "a", 56, getTrans ( "clickHere" ), alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $mask );
+    
     # Apply the mask
-    imageAlphaMask( $im, $mask );
+    imageAlphaMask ( $im, $mask );
 }
 
 # Need to turn on alpha again
-imagealphablending( $im, false );
-imagesavealpha( $im, true );
+imagealphablending ( $im, false );
+imagesavealpha ( $im, true );
 
 # Output the image and quit
-doImage();
+doImage ( );
 
 # Functions
 
@@ -193,7 +205,7 @@ function setFont( $f )
              2 
         ),
         "tr" => array( # Turkish
-             1 
+             1,
         )
     );
 
@@ -217,7 +229,7 @@ function setFont( $f )
     return true;
 }
 
-// Function for setting background (1 required variable, 1 optional variable)
+// Function for setting background (1 required variable, 2 optional variable)
 // Returns an image identifier on success, false on failure
 function setBackground( $bg, $bgcolor = "orange" )
 {
@@ -247,18 +259,26 @@ function setBackground( $bg, $bgcolor = "orange" )
     $overlay     = imagecreatefrompng( "images/bg/overlay.png" );
     $gloss       = imagecreatefrompng( "images/bg/gloss.png" );
 
-    // If the supplied background is valid, set the current background to that
-    if ( isset( $backgrounds[$bg - 1] ) )
-        $background = imagecreatefrompng( "images/bg/" . $bg . ".png" );
-
-    // If there's a valid background already set in the URI, set the current background to that
-    if ( isset( $backgrounds[$_GET['bg'] - 1] ) )
-        $background = imagecreatefrompng( "images/bg/" . $_GET['bg'] . ".png" );
+    global $url;
+    global $getUser;
+    if ( $url && !$_GET['bgcolor'] ) {
+        // Set it to the URL.
+        $background = imagecreatefrompng ( $getUser['r']['sig_url'] );      
+    } else {
     
-    // If the current background is not set, report failure
-    if ( !isset( $background ) )
-        return false;
+        // If the supplied background is valid, set the current background to that
+        if ( isset( $backgrounds[$bg - 1] ) )
+            $background = imagecreatefrompng ( "images/bg/" . $bg . ".png" );
 
+        // If there's a valid background already set in the URI, set the current background to that
+        if ( isset( $backgrounds[$_GET['bg'] - 1] ) )
+            $background = imagecreatefrompng ( "images/bg/" . $_GET['bg'] . ".png" );
+
+        // If the current background is not set, report failure
+        if ( !isset( $background ) )
+            return false;
+    }
+    
     // If a valid background color is supplied in the function, use it
     if ( in_array( $bgcolor, $bgcolors ) )
         $im = imagecreatefrompng( "images/bg/" . $bgcolor . ".png" );
