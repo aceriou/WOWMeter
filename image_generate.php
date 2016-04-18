@@ -255,9 +255,10 @@ function setBackground( $bg, $bgcolor = "orange" )
         "rainbow"
     );
     // Create the base image and the overlay
-    $im          = imagecreatefrompng( "images/bg/orange.png" );
-    $overlay     = imagecreatefrompng( "images/bg/overlay.png" );
-    $gloss       = imagecreatefrompng( "images/bg/gloss.png" );
+    $im          = imagecreatefrompng ( "images/bg/orange.png" );
+    $overlay     = imagecreatefrompng ( "images/bg/overlay.png" );
+    $gloss       = imagecreatefrompng ( "images/bg/gloss.png" );
+    $border      = imagecreatefrompng ( "images/bg/border.png" );
 
     global $url;
     global $getUser;
@@ -289,11 +290,18 @@ function setBackground( $bg, $bgcolor = "orange" )
 
     # Insert the components into the image
 
-    // Background
-    imagecopy( $im, $background, 0, 0, 0, 0, 240, 66 );
+    
     
     // Overlay
     imagecopy( $im, $overlay, 0, 0, 0, 0, 240, 66 );
+    
+    // Border/background (if custom)
+    if ( !empty ( $getUser['r']['sig_url'] ) ) {
+        imagecopy( $im, $background, 0, 0, 0, 0, 239, 65 );
+        imagecopy ( $im, $border, 0, 0, 0, 0, 240, 66 ); 
+    } else {
+        imagecopy( $im, $background, 0, 0, 0, 0, 240, 66 );
+    }
     
     // Gloss
     imagecopy( $im, $gloss, 0, 0, 0, 0, 240, 66 );
