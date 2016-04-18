@@ -67,9 +67,9 @@ if ( $_GET['mask'] == 1 ) { # Apply a mask if it's set
     drawText ( "a", 56, getTrans ( "clickHere" ), alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $im );
     
     # Text in the mask
-    drawText ( "a", 16, $getUser['r']['username'], alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $mask );
-    drawText ( "a", 36, getTrans ( "hasCollected" ), alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $mask );
-    drawText ( "a", 56, getTrans ( "clickHere" ), alloColor( 0, 0, 0, 80 ), false, NULL, 12, 0, $mask );
+    drawText ( "a", 16, $getUser['r']['username'], alloColor( "000001" ), false, NULL, 12, 0, $mask );
+    drawText ( "a", 35, getTrans ( "hasCollected" ), alloColor( "000001" ), false, NULL, 12, 0, $mask );
+    drawText ( "a", 55, getTrans ( "clickHere" ), alloColor( "000001" ), false, NULL, 12, 0, $mask );
     
     # Apply the mask
     imageAlphaMask ( $im, $mask );
