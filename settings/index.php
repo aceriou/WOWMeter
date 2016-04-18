@@ -28,6 +28,9 @@ switch ( $session_array['sig_bg'] ) {
         $bg_name  = "7";
         $bg_namee = "Cartoon doge";
         break;
+    case "8":
+        $bg_name  = "8";
+        $bg_namee = "Uploaded Background";
     default:
         $bg_name  = "1";
         $bg_namee = "Normal doge";
@@ -101,7 +104,12 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
     function change_bg ( bg, name ) {
         bgg = bg;
         $( '#' + bg ).prop ( 'checked', true );
-        $( '#selected_bg' ).attr ( 'src', '/sig/<?php echo $username; ?>?mask=1&bg=' + bg + '&font='+fontt+'&bgcolor=' + bgcolorr );
+        if ( bg == 8 || bgg == 8 ) {
+            $( '#selected_bg' ).attr ( 'src', '/sig/<?php echo $username; ?>?mask=1&font='+fontt );
+        } else {
+            $( '#selected_bg' ).attr ( 'src', '/sig/<?php echo $username; ?>?mask=1&bg=' + bg + '&font='+fontt+'&bgcolor=' + bgcolorr );
+        }
+        
         $( '#selected_bg_name' ).html ( name );
         $( ".fa-spinner" ).show ( );
     }
@@ -168,6 +176,14 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
             case 2:
                 echo "$('.font-warning code').html('Greek, Japanese, Turkish');$('.font-warning').show();";
                 break;
+            
+            case 3:
+                echo "$('.font-warning code').html('Greek, Japanese, Turkish, Nederlands');$('.font-warning').show();";
+                break;
+            
+            case 4:
+                echo "$('.font-warning code').html('Greek, Japanese, Turkish, Nederlands');$('.font-warning').show();";
+                break;
             } 
 
         ?>
@@ -194,6 +210,8 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
     <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=4"/>
     <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=5"/>
     <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=6"/>
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=7"/>
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=8"/>
     </div>
 
     <div class="box small no-title headline">
@@ -258,7 +276,7 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
         <tr><td colspan="3" style="border-bottom:solid 1px #eee;position:relative;">
             <img src="/sig/<?php echo $username; ?>?mask=1&bg=<?php echo $bg_name;?>" style="position: relative;width:240px;height:66px;z-index: 1;" id="selected_bg"/>
             <div style="position: absolute;top: 0;left: 5px;width: 96%;height: 20px;background: #<?php echo $session_array['usrname_color']; ?>" id="usrname_color"></div>
-            <div style="position: absolute;top: 20px;left: 5px;width: 96%;height: 40px;background: #<?php echo $session_array['text_color']; ?>" id="text_color"></div>
+            <div style="position: absolute;top: 20px;left: 5px;width: 96%;height: 42px;background: #<?php echo $session_array['text_color']; ?>" id="text_color"></div>
             
         </td></tr>
         <tr><td style="border-right:solid 1px #eee;border-bottom:solid 1px #eee">
@@ -268,13 +286,14 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
     <span id="selected_bg_name"><?php echo $bg_namee; ?></span> <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="javascript:change_bg(1, 'Normal doge');void(0)" title="Normal doge"><img src="/images/bg/1.png" alt="Normal doge"/><br/>Normal doge</a></li>
-    <li><a href="javascript:change_bg(2, '8-bit doge');void(0)" title="8-bit doge"><img src="/images/bg/2.png" alt="8-bit doge"/><br/>8-bit doge</a></li>
-    <li><a href="javascript:change_bg(3, 'Neko doge');void(0)" title="Neko doge"><img src="/images/bg/3.png" alt="Neko doge"/><br/>Neko doge</a></li>
-    <li><a href="javascript:change_bg(4, 'Flandre Scarlet doge');void(0)" title="Flandre Scarlet doge"><img src="/images/bg/4.png" alt="Flandre Scarlet doge"/><br/>Flandre Scarlet doge</a></li>
-    <li><a href="javascript:change_bg(5, 'Snoop Dogge');void(0)" title="Snoop Dogge"><img src="/images/bg/5.png" alt="Snoop Dogge"/><br/>Snoop Dogge</a></li>
-    <li><a href="javascript:change_bg(6, 'Toontown doge');void(0)" title="Toontown doge"><img src="/images/bg/6.png" alt="Toontown doge"/><br/>Toontown doge</a></li>
-    <li><a href="javascript:change_bg(7, 'Cartoon doge');void(0)" title="Cartoon doge"><img src="/images/bg/7.png" alt="Cartoon doge"/><br/>Cartoon doge</a></li>
+      <li><a href="javascript:change_bg(1, 'Normal doge');void(0)" title="Normal doge"><img src="/images/bg/1.png" alt="Normal doge"/><br/>Normal doge</a></li>
+      <li><a href="javascript:change_bg(2, '8-bit doge');void(0)" title="8-bit doge"><img src="/images/bg/2.png" alt="8-bit doge"/><br/>8-bit doge</a></li>
+      <li><a href="javascript:change_bg(3, 'Neko doge');void(0)" title="Neko doge"><img src="/images/bg/3.png" alt="Neko doge"/><br/>Neko doge</a></li>
+      <li><a href="javascript:change_bg(4, 'Flandre Scarlet doge');void(0)" title="Flandre Scarlet doge"><img src="/images/bg/4.png" alt="Flandre Scarlet doge"/><br/>Flandre Scarlet doge</a></li>
+      <li><a href="javascript:change_bg(5, 'Snoop Dogge');void(0)" title="Snoop Dogge"><img src="/images/bg/5.png" alt="Snoop Dogge"/><br/>Snoop Dogge</a></li>
+      <li><a href="javascript:change_bg(6, 'Toontown doge');void(0)" title="Toontown doge"><img src="/images/bg/6.png" alt="Toontown doge"/><br/>Toontown doge</a></li>
+      <li><a href="javascript:change_bg(7, 'Cartoon doge');void(0)" title="Cartoon doge"><img src="/images/bg/7.png" alt="Cartoon doge"/><br/>Cartoon doge</a></li>
+      <?php if ( !empty ( $session_array['sig_url'] ) ) { ?><li><a href="javascript:change_bg(8, 'Uploaded Background');void(0)" title="Uploaded Background"><img src="<?php echo $session_array['sig_url']; ?>" height="66" width="240" alt="Uploaded Background"/><br/>Uploaded Background</a></li><?php } ?>
   </ul>
 </div></td></tr>
         <tr><td style="border-right:solid 1px #eee;border-bottom:solid 1px #eee">
@@ -286,8 +305,8 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
   <ul class="dropdown-menu" role="menu">
     <li><a href="javascript:change_font(1, 'Japanese', 'Comic Sans');void(0)" title="Comic Sans"><div style="font-family: 'Comic Sans MS'; ">Comic Sans</div><!--<div style="width:145px;height:24px;background:url(/images/fonts.png);background-position:-75px 0"></div>--></a></li>
     <li><a href="javascript:change_font(2, 'Greek, Japanese, Turkish', 'Hand of Sean');void(0)" title="Hand of Sean"><div style="font-family: 'Hand of Sean'; ">Hand of Sean</div><!--<div style="width:145px;height:24px;background:url(/images/fonts.png);background-position:-75px 105px"></div>--></a></li>
-    <li><a href="javascript:change_font(4, 'Greek, Japanese, Turkish', 'Pacifico');void(0)" title="Pacifico"><div style="font-family: 'Pacifico'; ">Pacifico</div><!--<div style="width:145px;height:24px;background:url(/images/fonts.png);background-position:-75px 50px"></div>--></a></li>
-    <li><a href="javascript:change_font(5, 'Greek, Japanese, Turkish', 'Chewy');void(0)" title="Chewy"><div style="font-family: 'Chewy'; ">Chewy</div><!--<div style="width:145px;height:24px;background:url(/images/fonts.png);background-position:-75px 24px"></div>--></a></li>
+    <li><a href="javascript:change_font(4, 'Greek, Japanese, Turkish, Nederlands', 'Pacifico');void(0)" title="Pacifico"><div style="font-family: 'Pacifico'; ">Pacifico</div><!--<div style="width:145px;height:24px;background:url(/images/fonts.png);background-position:-75px 50px"></div>--></a></li>
+    <li><a href="javascript:change_font(5, 'Greek, Japanese, Turkish, Nederlands', 'Chewy');void(0)" title="Chewy"><div style="font-family: 'Chewy'; ">Chewy</div><!--<div style="width:145px;height:24px;background:url(/images/fonts.png);background-position:-75px 24px"></div>--></a></li>
   
   </ul>
 </div></td></tr>
@@ -330,6 +349,7 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
 <input type="radio" name="bg" id="5" value="5"<?php if($session_array['sig_bg'] == 5)echo" checked";?>>
 <input type="radio" name="bg" id="6" value="6"<?php if($session_array['sig_bg'] == 6)echo" checked";?>>
 <input type="radio" name="bg" id="7" value="7"<?php if($session_array['sig_bg'] == 7)echo" checked";?>>
+<input type="radio" name="bg" id="8" value="8"<?php if($session_array['sig_bg'] == 8)echo" checked";?>>  
   
 <input type="radio" name="font" id="font_1" value="1"<?php if($session_array['sig_font'] == 1)echo" checked";?>>
 <input type="radio" name="font" id="font_2" value="2"<?php if($session_array['sig_font'] == 2)echo" checked";?>>
