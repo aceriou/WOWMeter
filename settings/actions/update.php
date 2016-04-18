@@ -36,7 +36,7 @@ $bgcolors = array(
 if ( in_array ( $_POST['bgcolor'], $bgcolors ) )
   $bg_color = doSafe ( $_POST['bgcolor'] );
 
-if ( !is_numeric ( $font ) || $font < 1 || $font > 5 || !is_numeric ( $background ) || $background < 1 || $background > 7 || !preg_match('/^[a-f0-9]{6}$/i', $username_color ) ) {
+if ( !is_numeric ( $font ) || $font < 1 || $font > 5 || !is_numeric ( $background ) || $background < 1 || $background > 7 || !preg_match('/^[a-f0-9]{6}$/i', $username_color || !preg_match('/^[a-f0-9]{6}$/i', $text_color ) ) {
   header( "Location: ../settings/index.php?alert=no" );
   exit;
 }
