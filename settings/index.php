@@ -148,6 +148,19 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
         }).keyup( function ( ) {
             $(this).colpickSetColor( this.value );
         });
+        $( '#picker2' ).colpick({
+            layout:'hex',
+            submit:0,
+            color: "<?php echo $session_array['text_color']; ?>",
+            colorScheme: 'light',
+            onChange:function( hsb, hex, rgb, el, bySetColor ) {
+                $(el).css ( {'border-color' : '#' + hex, 'border-width' : ''} );
+                $( "#text_color" ).css( 'background','#' + hex );
+                if ( !bySetColor ) $(el).val( hex );
+            }
+        }).keyup( function ( ) {
+            $(this).colpickSetColor( this.value );
+        });
 
         <?php 
             switch ( $session_array['sig_font'] ) {
@@ -242,9 +255,11 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
     <div class="title">Signature</div>
         <div class="member-card">
     <table>
-        <tr><td colspan="3" style="border-bottom:solid 1px #eee;position:relative">
+        <tr><td colspan="3" style="border-bottom:solid 1px #eee;position:relative;">
             <img src="/sig/<?php echo $username; ?>?mask=1&bg=<?php echo $bg_name;?>" style="position: relative;width:240px;height:66px;z-index: 1;" id="selected_bg"/>
             <div style="position: absolute;top: 0;left: 5px;width: 96%;height: 20px;background: #<?php echo $session_array['usrname_color']; ?>" id="usrname_color"></div>
+            <div style="position: absolute;top: 20px;left: 5px;width: 96%;height: 40px;background: #<?php echo $session_array['text_color']; ?>" id="text_color"></div>
+            
         </td></tr>
         <tr><td style="border-right:solid 1px #eee;border-bottom:solid 1px #eee">
         Background
@@ -280,6 +295,12 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
         Username color
         </td>
         <td style="color:#424854;border-bottom:solid 1px #eee" colspan="2">#<input type="text" id="picker" name="usrname_color" value="<?php echo $session_array['usrname_color']; ?>" readonly style="<?php if ( $session_array['usrname_color'] != "ffffff" ) { echo "border-color: #".$session_array['usrname_color']; } else { echo "border-color: inherit;border-width:1px"; } ?>"></input></td></tr>
+        
+        <tr><td style="border-right:solid 1px #eee;border-bottom:solid 1px #eee">
+        Text color
+        </td>
+        <td style="color:#424854;border-bottom:solid 1px #eee" colspan="2">#<input type="text" id="picker2" name="text_color" value="<?php echo $session_array['text_color']; ?>" readonly style="<?php if ( $session_array['text_color'] != "ffffff" ) { echo "border-color: #".$session_array['text_color']; } else { echo "border-color: inherit;border-width:1px"; } ?>"></input></td></tr>
+        
         <tr><td style="border-right:solid 1px #eee">
         Background color
         </td>
