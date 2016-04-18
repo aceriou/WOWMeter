@@ -297,7 +297,7 @@ function setBackground( $bg, $bgcolor = "orange" )
     
     // Border/background (if custom)
     if ( !empty ( $getUser['r']['sig_url'] ) ) {
-        imagecopy( $im, $background, 0, 0, 0, 0, 239, 65 );
+        imagecopy ( $im, $background, 1, 1, 0, 0, 239, 64 );
         imagecopy ( $im, $border, 0, 0, 0, 0, 240, 66 ); 
     } else {
         imagecopy( $im, $background, 0, 0, 0, 0, 240, 66 );
