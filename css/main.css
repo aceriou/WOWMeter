@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+pi@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 @import url(additional-fonts.css);
 
 html{
@@ -379,7 +379,7 @@ html.fontface .button[class*="ico-"]:after{
 	position:absolute;
 	top:-999%;
 }
-#picker {
+#picker, #picker2 {
 	margin:0;
 	padding:0;
 	border:0;
