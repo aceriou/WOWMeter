@@ -32,6 +32,7 @@ if ( date('Y-m-d', filemtime ( 'mapcache.gif' ) ) != date ( 'Y-m-d' ) || isset (
     
     imagestring ( $image, 2, 1, 0, "WOWMeter World Map - http://wowmeter.us", $normal );
     imagestring ( $image, 2, 1, 240, "Updated every 24 hours", $normal );
+	imagestring ( $image, 2, 450, 0, date ( 'Y/m/d' ), $normal );
     imagestring ( $image, 2, 450, 240, mysqli_num_rows ( $sql ) . " wows", $normal );
 
     imagegif ( $image, 'mapcache.gif' );
