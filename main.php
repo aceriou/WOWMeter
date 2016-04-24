@@ -1,7 +1,7 @@
 <!--<a href="https://github.com/aceriou/WOWMeter"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>-->
 
 <div class="box small no-title headline" style="padding: 5px;display: block">
-        <strong>April 14th 2016:</strong> Japanese font fixed.
+        <strong>April 23rd 2016:</strong> Added map statistics so you can see where WOWMeter is used around the world :)
 </div>
 
 <?php
@@ -75,7 +75,7 @@ if ( $no_script != 1 ) {
             $( "input[type=email], .register-alert" ).toggle ( );
           $( "input[type=text]" ).attr( "placeholder", "Username or email" );
           
-                document.getElementById ( "form" ).setAttribute ( "action", "doLogin.php" );
+                document.getElementById ( "form" ).setAttribute ( "action", "/doLogin.php" );
           
                 login_type = "login";
                 
@@ -91,7 +91,7 @@ if ( $no_script != 1 ) {
             
                 $.ajax ({
                     type     : 'POST',
-                    url      : 'doLogin.php',
+                    url      : '/doLogin.php',
                     data     : formData,
                     beforeSend: function ( ) {
               $( ".box.login" ).prepend ( "<i class='fa fa-spinner fa-spin fa-2x'></i>" );
@@ -108,7 +108,7 @@ if ( $no_script != 1 ) {
               if ( response == 'success' ) {
                 $( ".box.login > .fa-spinner" ).remove ( );
                 $( ".box.login" ).prepend ( "<i class='fa fa-ok fa-2x' style='color: #fff;position: absolute;top: 5px;right: 6px;z-index: 1;'></i>" );
-                document.location.href = "index.php";
+                document.location.href = "/index.php";
               } else {
                 if ( response == '' ) {
                   $( ".box.login > .fa-spinner" ).remove ( );
@@ -144,7 +144,7 @@ if ( $no_script != 1 ) {
                 $("input[type=email], .register-alert").toggle();
           $("input[type=text]").attr("placeholder", "Username");
                 
-          document.getElementById("form").setAttribute("action", "doRegister.php");
+          document.getElementById("form").setAttribute("action", "/doRegister.php");
                 
           login_type = "register";
                 
@@ -160,7 +160,7 @@ if ( $no_script != 1 ) {
             
                 $.ajax ({
                     type     : 'POST',
-                    url      : 'doRegister.php',
+                    url      : '/doRegister.php',
                     data     : formData,
                     beforeSend: function ( ) {
               $( ".box.login" ).prepend ( "<i class='fa fa-spinner fa-spin fa-2x'></i>" );
@@ -177,7 +177,7 @@ if ( $no_script != 1 ) {
               if ( response == 'success' ) {
                 $( ".box.login > .fa-spinner" ).remove ( );
                 $( ".box.login" ).prepend ( "<i class='fa fa-ok fa-2x' style='color: #fff;position: absolute;top: 5px;right: 6px;z-index: 1;'></i>" );
-                document.location.href = "index.php";
+                document.location.href = "/index.php";
               } else {
                 if ( response == '' ) {
                   $( ".box.login > .fa-spinner" ).remove ( );
@@ -214,7 +214,7 @@ if ( $no_script != 1 ) {
   <div class="box col-md-4 login">
         <?php if ( $member_access == false ) { ?>
     <div class="title">Login</div>
-        <form action="doLogin.php" method="POST" id="form">
+        <form action="/doLogin.php" method="POST" id="form">
             <input type="email" class="form-control" placeholder="Email" name="email" style="display:none">
             <input type="text" class="form-control" placeholder="Username or email" name="username">
             <input type="password" class="form-control" placeholder="Password" name="password">
@@ -222,7 +222,7 @@ if ( $no_script != 1 ) {
             <button type="submit" class="button cosmo ico-left left" name="register" id="registerbutton1">Register</button>
             <!--<a href="/forgotpasswd.php" style="display: inline-block;">Forgot password</a>-->
             <div class="clearfix"></div>
-            <p class="register-alert" style="display:none;color:#424854">By clicking register,<br>you agree to the <a href="tos.php">Terms of Service</a>.<br></p>
+            <p class="register-alert" style="display:none;color:#424854">By clicking register,<br>you agree to the <a href="/tos.php">Terms of Service</a>.<br></p>
         <div class="clearfix"></div></form>
 
         <div>
@@ -299,7 +299,7 @@ if ( $no_script != 1 ) {
         </p>
         <p>
             Your last wow <?php if ( $wow_number == 0 ) { echo "was <strong title=':('>never given</strong>"; } else { echo "was given <br><strong title='".$wow['wow_date']."'>".nicetime ( $wow['wow_date'] )."</strong>";
-            if ( !isset ( $wow_from ) ) { echo " from <strong>".$city.$state.$country." <img src='images/flags/".strtolower ( $rsGeoData->country_code ).".gif' title='".htmlentities ( $rsGeoData->country_name )."' alt='".htmlentities ( $rsGeoData->country_name )."'/></strong>"; } else { echo $wow_from; } } ?>.</p>
+            if ( !isset ( $wow_from ) ) { echo " from <strong>".$city.$state.$country." <img src='/images/flags/".strtolower ( $rsGeoData->country_code ).".gif' title='".htmlentities ( $rsGeoData->country_name )."' alt='".htmlentities ( $rsGeoData->country_name )."'/></strong>"; } else { echo $wow_from; } } ?>.</p>
         
         </p>
 
@@ -431,8 +431,9 @@ if ( $no_script != 1 ) {
             echo "</span></td><td style='text-align:right'>".$leaderboard["wow_count"]." wows</td></tr>";
         }
         ?>
-        </table></div>
-
+        </table>
+        <a href="/map.php">Map statistics</a>
+</div>
 </div>
   
 <?php } ?>
