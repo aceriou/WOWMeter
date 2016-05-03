@@ -73,6 +73,36 @@ if ( isset ( $_POST['token'] ) && isset ( $_POST['wow'] ) ) {
             $alreadygaveawow = "すでにきょう".$user_array['username']."にワウたしました！<br>あしたもういちどおためしください！";
             $success         = "はワウせいこうし".$user_array['username']."にあたえられた！"; 
             break;
+        case "fr":
+            $userbanned      = "Désolé, " . $user_array['username'] . " est interdit de " . SITE_NAME;
+            $alreadygaveawow = "Vous avez déjà donné un wow à " . $user_array['username'] . " aujourd'hui!<br>Essaye encore demain!";
+            $success         = "WOW donné avec succès à " . $user_array['username'];
+            break;
+        case "es":
+            $userbanned      = "Lo sentimos, " . $user_array['username'] . " tiene prohibido " . SITE_NAME . "!";
+            $alreadygaveawow = "Ya has dado un wow de " . $user_array['username'] . " hoy!<br>Trata de nuevo mañana.";
+            $success         = "WOW dado con éxito para " . $user_array['username'];
+            break;
+        case "tr":
+            $userbanned      = "Maalesef, " . $user_array['username'] . " " . SITE_NAME . " yasaklandı.";
+            $alreadygaveawow = "Zaten bir wow " . $user_array['username'] . " bugün verdik!<br>Yarın tekrar dene!";
+            $success         = "WOW başarıyla " . $user_array['username'] . " verilen.";
+            break;
+        case "de":
+            $userbanned      = "Sorry, " . $user_array['username'] . " wordt verbannen uit " . SITE_NAME . ".";
+            $alreadygaveawow = "Je hebt al een wow te " . $user_array['username'] . " vandaag gegeven!<br>Probeer het morgen opnieuw!";
+            $success         = "WOW succes gegeven aan " . $user_array['username'] . "!";
+            break;
+        case "gr":
+            $userbanned      = "Συγνώμη, " . $user_array['username'] . " απαγορεύεται από " . SITE_NAME;
+            $alreadygaveawow = "Έχετε ήδη δοθεί wow να " . $user_array['username'] . " σήμερα!<br>Ξαναπροσπάθησε αύριο!";
+            $success         = "WOW επιτυχία δοθεί " . $user_array['username'] . "!";
+            break;
+        case "nl":
+            $userbanned      = "Sorry, " . $user_array['username'] . " wordt verbannen uit " . SITE_NAME . ".";
+            $alreadygaveawow = "Je hebt al een wow te " . $user_array['username'] . " vandaag gegeven!<br>Probeer het morgen opnieuw!";
+            $success         = "WOW succes gegeven aan " . $user_array['username'] . "!";
+            break;
         default:
             $userbanned      = "Sorry, ".$user_array['username']." is banned from '" . SITE_NAME . "'.";
             $alreadygaveawow = "You've already given a wow to ".$user_array['username']." today!<br>Try again tomorrow!";
