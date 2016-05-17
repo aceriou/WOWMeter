@@ -19,16 +19,16 @@ $ip_addr     = mysqli_num_rows ( $ip_check );
 $email_addr  = mysqli_num_rows ( $email_check );
 
 if ( strlen ( $username ) > USERNAME_MAX )
-  die ( 'Username is too long for a Doge to understand. ' . USERNAME_MAX . ' maximum.' );
+    die ( 'Username is too long for a Doge to understand. ' . USERNAME_MAX . ' maximum.' );
 
 if ( strlen ( $username ) < USERNAME_MIN )
-  die ( 'Username is too short for a Doge\'s likings. ' . USERNAME_MIN . ' character minimum.' );
+    die ( 'Username is too short for a Doge\'s likings. ' . USERNAME_MIN . ' character minimum.' );
 
 if ( strlen ( $password ) > PASSWORD_MAX )
-  die ( 'Password is much long very scary. ' . PASSWORD_MAX . ' max.' );
+    die ( 'Password is much long very scary. ' . PASSWORD_MAX . ' max.' );
 
 if ( !doEmailCheck ( $email ) )
-  die ( 'Email is much invalid, very bad.' );
+    die ( 'Email is much invalid, very bad.' );
 
 if ( preg_match('/[^\w-]+/i', $username ) )
     die ( 'Your username is too complex. We only allow alphanumeric characters, hyphens and underscores.' );
@@ -61,3 +61,5 @@ if ( doAjax ( ) ) {
 } else {
     header("Location: index.php");
 }
+
+?>
