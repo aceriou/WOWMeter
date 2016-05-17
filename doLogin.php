@@ -12,18 +12,18 @@ $user_number = mysqli_num_rows ( $array_query );
 
 # Security Checks
 if ( !$username || !$password ) {
-  die ( 'You must fill in the form!' );
+    die ( 'You must fill in the form!' );
 }
 
 if ( $user_number != 1 ) {
-  die ( 'Username is incorrect.' );
+    die ( 'Username is incorrect.' );
 }
 
 # Password Checking
 $password = stripcslashes ( $password );
 $password = hash ( 'sha512', $salt.$password );
 if ( $password != $user['password'] ) {
-  die ( 'Password is incorrect.' );
+    die ( 'Password is incorrect.' );
 }
 
 # Cookies
