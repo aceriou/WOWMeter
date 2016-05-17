@@ -1,8 +1,22 @@
 <!--<a href="https://github.com/aceriou/WOWMeter"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>-->
 
 <div class="box small no-title headline" style="padding: 5px;display: block">
-        <strong>May 3rd 2016:</strong> WOWMeter is now open in China, and there is more language support around the website.
+        <strong>May 17th 2016:</strong> Click the "Contact us" button if you want to request a custom signature background.
 </div>
+
+<center>
+    
+<!-- Project Wonderful Ad Box Code -->
+<div id="pw_adbox_78625_6_0"></div>
+<script type="text/javascript"></script>
+<noscript><map name="admap78625" id="admap78625"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=78625&type=6" shape="rect" coords="0,0,234,60" title="" alt="" target="_blank" /></map>
+<table cellpadding="0" cellspacing="0" style="width:234px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=78625&type=6" style="width:234px;height:60px;border-style:none;" usemap="#admap78625" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=78625&type=6" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table>
+</noscript>
+<!-- End Project Wonderful Ad Box Code -->
+
+</center>
+
+<br />
 
 <?php
 
@@ -422,7 +436,7 @@ if ( $no_script != 1 ) {
 
             echo "<img src='/images/flags/".strtolower ( $rsGeoData->country_code ).".gif' title='".htmlentities ( $rsGeoData->country_name )."' alt='".htmlentities ( $rsGeoData->country_name )."'/> ".$leaderboard["username"];
             
-            if( $leaderboard['is_banned'] == 1)
+            if( $leaderboard['is_banned'] == 1 )
                 echo "</s>";
             
             if ( $leaderboard['wow_count'] == "" )
@@ -437,20 +451,22 @@ if ( $no_script != 1 ) {
 </div>
   
 <?php } ?>
-  
+
+
 <h6 style="margin-bottom:30px;color:#424854">
-  <a href="/tos.php">Terms of Service</a><br>
-  <a href="http://github.com/aceriou/WOWMeter">Contribute / Source Code</a><br>
-  <a href="mailto:<?php echo CONTACT; ?>">Contact us</a><br><br>
-  <?php echo SITE_NAME; ?> is &copy; by 
-  <a href="http://cammarata.info">Preston Cammarata</a>, <?php echo date ( "Y" ); ?>.<br>
-  Made in Rhode Island<br>
-  <span style="font-size:8px;font-family:'Small Fonts', sans-serif">
-  <br>
-  <?php
-  $end = microtime ( true );
-  $creationtime = ( $end - $start );
-  printf( "<br>Render time: %.6fs.", $creationtime );
-  ?>
-  </span>
+    <a href="/wtfiswowmeter.php" style="font-size: 15px;">wtf</a><br><br>
+    <a href="/tos.php">Terms of Service</a><br>
+    <a href="http://github.com/aceriou/WOWMeter">Contribute / Source Code</a><br>
+    <a href="mailto:<?php echo CONTACT; ?>">Contact us</a><br><br>
+    <?php echo SITE_NAME; ?> is &copy; by 
+    <a href="http://cammarata.info">Preston Cammarata</a>, <?php echo date ( "Y" ); ?>.<br>
+    Made in Rhode Island<br>
+    <span style="font-size:8px;font-family:'Small Fonts', sans-serif">
+        <br>
+        <?php
+        $end = microtime ( true );
+        $creationtime = ( $end - $start );
+        printf( "<br>Render time: %.6fs.", $creationtime );
+        ?>
+    </span>
 </h6>
