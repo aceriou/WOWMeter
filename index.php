@@ -1,5 +1,5 @@
 <?php
-require_once 'header.php';
+require 'header.php';
 
 $random_strings = array ( 'Hi there', 'Hey', 'What\'s up', 'Hello', 'Yo' );
 $rs_key         = array_rand ( $random_strings );
@@ -19,4 +19,4 @@ $rs_key         = array_rand ( $random_strings );
     
 	</div>
 
-<?php require_once 'main.php'; ?>
+<?php require 'main.php'; ?>
