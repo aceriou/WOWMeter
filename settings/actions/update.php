@@ -1,15 +1,15 @@
 <?php
-require_once '../wow.php';
+require_once '../../wow.php';
 
 # Login restriction
 if ( !$member_access ) {
-    header ( "Location: ../index.php" );
+    header ( "Location: ../../" );
     exit;
 }
 
 # Security input checks
 if ( !isset ( $_POST['submit'] ) ) {
-    header ( "Location: ../index.php" );
+    header ( "Location: ../" );
     exit;
 }
 
@@ -37,7 +37,7 @@ if ( in_array ( $_POST['bgcolor'], $bgcolors ) )
   $bg_color = doSafe ( $_POST['bgcolor'] );
 
 if ( !is_numeric ( $font ) || $font < 1 || $font > 5 || !is_numeric ( $background ) || $background < 1 || $background > 7 || !preg_match('/^[a-f0-9]{6}$/i', $username_color ) || !preg_match( '/^[a-f0-9]{6}$/i', $text_color ) ) {
-  header( "Location: ../settings/index.php?alert=no" );
+  header( "Location: ../settings/?alert=no" );
   exit;
 }
 
@@ -50,7 +50,7 @@ $setbg_color      = mysqli_query ( wow ( ), "UPDATE users SET bg_color = '$bg_co
 
 # Get out of here you bitch
 if ( !$setusrname_color || !$settext_color || !$setbg || !$setfont || !$setbg_color ) {
-  header ( "Location: ../settings/index.php?alert=error" );
+  header ( "Location: ../settings/?alert=error" );
 } else {
-	header( "Location: ../settings/index.php?alert=success" );
+	header( "Location: ../settings/?alert=success" );
 }
