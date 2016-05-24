@@ -9,22 +9,22 @@
 <!-- Project Wonderful Ad Box Code -->
 <div id="pw_adbox_78625_6_0"></div>
 <script type="text/javascript"></script>
-<noscript><map name="admap78625" id="admap78625"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=78625&type=6" shape="rect" coords="0,0,234,60" title="" alt="" target="_blank" /></map>
-<table cellpadding="0" cellspacing="0" style="width:234px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=78625&type=6" style="width:234px;height:60px;border-style:none;" usemap="#admap78625" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=78625&type=6" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table>
+<noscript><map name="admap78625" id="admap78625"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=78625&type=6" shape="rect" coords="0,0,234,60" title="" alt="" target="_blank"></map>
+<table cellpadding="0" cellspacing="0" style="width:234px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=78625&type=6" style="width:234px;height:60px;border-style:none;" usemap="#admap78625" alt=""></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=78625&type=6" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table>
 </noscript>
 <!-- End Project Wonderful Ad Box Code -->
 
 </center>
 
-<br />
+<br >
 
 <?php
 
 if ( $no_script != 1 ) {
         // Load GeoIP
-        require_once 'geoip/geoipregionvars.php';
-        require_once 'geoip/geoipcity.inc';
-        require_once 'geoip/geoip.inc';
+        require 'geoip/geoipregionvars.php';
+        require 'geoip/geoipcity.inc';
+        require 'geoip/geoip.inc';
         $gi = geoip_open ( 'geoip/GeoLiteCity.dat', GEOIP_STANDARD );
 
 ?>
@@ -75,7 +75,7 @@ if ( $no_script != 1 ) {
             break;
         }
 
-        $( "#lang-btn" ).html ( "<img src=\"/images/flags/"+laang+".gif\"/> "+lang2+" <span class=\"caret\"></span>" );
+        $( "#lang-btn" ).html ( "<img src=\"/images/flags/"+laang+".gif\"> "+lang2+" <span class=\"caret\"></span>" );
         $( "#sig" ).attr ( "src", "/$<?php echo $username; ?>?lang="+laang );
         return false;
     }
@@ -241,7 +241,7 @@ if ( $no_script != 1 ) {
 
         <div>
         <strong>Register now</strong> to get<br>your own <strong><?php echo SITE_NAME; ?></strong> like these!<br>
-        <br />
+        <br >
         <?php
         $randomuser_sql = mysqli_query ( wow ( ), "SELECT  a.*,  totalCount AS wow_count
                                                    FROM    users a 
@@ -255,7 +255,7 @@ if ( $no_script != 1 ) {
                                                    ORDER BY RAND(), b.TotalCount LIMIT 6" );
 
         while ( $randomuser = mysqli_fetch_assoc ( $randomuser_sql ) ) {
-            echo '<img src="/$'.$randomuser['username'].'" alt="'.$randomuser['username'].'\'s WOWMeter " title="'.$randomuser['username'].'\'s WOWMeter "/><br>';
+            echo '<img src="/$'.$randomuser['username'].'" alt="'.$randomuser['username'].'\'s WOWMeter " title="'.$randomuser['username'].'\'s WOWMeter "><br>';
         }
 
         ?>
@@ -284,7 +284,7 @@ if ( $no_script != 1 ) {
         if ( $getwowfrom_number && $wow['wow_from'] != "127.0.0.1" ) {
             $hex       = $getwowfrom['usrname_color'];
             $wow_from  = " by&nbsp;&nbsp;<span style='color:#$hex' class=\"table-color ". $getwowfrom["bg_color"] ." font-". $getwowfrom["sig_font"] ."\"";
-            $wow_from .= "><img src='images/flags/".strtolower($rsGeoData->country_code).".gif' title='".htmlentities($rsGeoData->country_name)."' alt='".htmlentities($rsGeoData->country_name)."'/> ".$getwowfrom['username']."</span>";
+            $wow_from .= "><img src='images/flags/".strtolower($rsGeoData->country_code).".gif' title='".htmlentities($rsGeoData->country_name)."' alt='".htmlentities($rsGeoData->country_name)."'> ".$getwowfrom['username']."</span>";
         }
     
         if ( $city == $state ) $city == '';
@@ -313,12 +313,12 @@ if ( $no_script != 1 ) {
         </p>
         <p>
             Your last wow <?php if ( $wow_number == 0 ) { echo "was <strong title=':('>never given</strong>"; } else { echo "was given <br><strong title='".$wow['wow_date']."'>".nicetime ( $wow['wow_date'] )."</strong>";
-            if ( !isset ( $wow_from ) ) { echo " from <strong>".$city.$state.$country." <img src='/images/flags/".strtolower ( $rsGeoData->country_code ).".gif' title='".htmlentities ( $rsGeoData->country_name )."' alt='".htmlentities ( $rsGeoData->country_name )."'/></strong>"; } else { echo $wow_from; } } ?>.</p>
+            if ( !isset ( $wow_from ) ) { echo " from <strong>".$city.$state.$country." <img src='/images/flags/".strtolower ( $rsGeoData->country_code ).".gif' title='".htmlentities ( $rsGeoData->country_name )."' alt='".htmlentities ( $rsGeoData->country_name )."'></strong>"; } else { echo $wow_from; } } ?>.</p>
         
         </p>
 
         <p><h5>Share to collect much wows</h5>
-        <img src="/$<?php echo $username; ?>" id="sig"/>
+        <img src="/$<?php echo $username; ?>" id="sig">
         <div class="share"><!--
         --><a class="fb" href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer.php?u=<?php echo urlencode("http://wowmeter.us/@".$username); ?>&t=<?php echo urlencode("WOWMeter - Giving a wow to ".$username)?>', 'sharer', 'toolbar=0, status=0, width=480, height=370')" title="Share through Facebook"></a><!--
         --><a class="tw" href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?hashtags=wowmeter&text=Click%20here%20to%20give%20<?php echo urlencode($username); ?>%20a%20wow!&url=<?php echo urlencode("http://wowmeter.us/@".$username); ?>&via=aceriou', 'sharer', 'toolbar=0, status=0, width=480, height=260')" title="Share through Twitter"></a><!--
@@ -327,25 +327,25 @@ if ( $no_script != 1 ) {
         --></div>
         <div class="btn-group" style="float:left">
         <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" id="lang-btn">
-        <img src="/images/flags/us.gif"/> English <span class="caret"></span>
+        <img src="/images/flags/us.gif"> English <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu" style="text-align:left">
-        <li><a href="javascript:changelang('en');void(0)"><img src="/images/flags/us.gif"/> English</a></li>
-        <li><a href="javascript:changelang('es');void(0)"><img src="/images/flags/es.gif"/> Español</a></li>
-        <li><a href="javascript:changelang('de');void(0)"><img src="/images/flags/de.gif"/> Deutsch</a></li>
-        <li><a href="javascript:changelang('fr');void(0)"><img src="/images/flags/fr.gif"/> Français</a></li>
-        <li><a href="javascript:changelang('gr');void(0)"><img src="/images/flags/gr.gif"/> ελληνική</a></li>
-        <li><a href="javascript:changelang('jp');void(0)"><img src="/images/flags/jp.gif"/> 日本語</a></li>
-        <li><a href="javascript:changelang('nl');void(0)"><img src="/images/flags/nl.gif"/> Nederlands</a></li>
-        <li><a href="javascript:changelang('tr');void(0)"><img src="/images/flags/tr.gif"/> Türkçe</a></li>
+        <li><a href="javascript:changelang('en');void(0)"><img src="/images/flags/us.gif"> English</a></li>
+        <li><a href="javascript:changelang('es');void(0)"><img src="/images/flags/es.gif"> Español</a></li>
+        <li><a href="javascript:changelang('de');void(0)"><img src="/images/flags/de.gif"> Deutsch</a></li>
+        <li><a href="javascript:changelang('fr');void(0)"><img src="/images/flags/fr.gif"> Français</a></li>
+        <li><a href="javascript:changelang('gr');void(0)"><img src="/images/flags/gr.gif"> ελληνική</a></li>
+        <li><a href="javascript:changelang('jp');void(0)"><img src="/images/flags/jp.gif"> 日本語</a></li>
+        <li><a href="javascript:changelang('nl');void(0)"><img src="/images/flags/nl.gif"> Nederlands</a></li>
+        <li><a href="javascript:changelang('tr');void(0)"><img src="/images/flags/tr.gif"> Türkçe</a></li>
         </ul>
         </div>
         <a href="javascript:window.open('/whichone.php','windowNew','width=320, height=400');void(0)" style="float:right">Which one do I use?</a>
         <table style="width:100%">
             <tr><td>BBCode </td><td><textarea id="bbcode-code" readonly>[url=http://wowmeter.us/@<?php echo $username; ?>][img]http://wowmeter.us/$<?php echo $username; ?>[/img][/url]</textarea></td></tr>
             <tr><td>HTML </td><td><textarea id="html-code" readonly>&lt;a href="http://wowmeter.us/@<?php echo $username; ?>" target="_blank"&gt;&lt;img src="http://wowmeter.us/$<?php echo $username; ?>" alt="Give <?php echo $username; ?> a wow"/&gt;&lt;/a&gt;</textarea></td></tr>
-            <tr><td>Supporting &nbsp;<br>websites <a href="javascript:window.open('/supporting.php','windowNew','width=320, height=400');void(0)">(?)</a></td><td><input type="text" value="[wow=<?php echo $username; ?>]" id="sn-code" readonly/></td></tr><br>
-            <tr><td>Direct link</td><td style="padding-bottom:4px"><input type="text" value="http://wowmeter.us/@<?php echo $username; ?>" id="direct-code" readonly/></td></tr>
+            <tr><td>Supporting &nbsp;<br>websites <a href="javascript:window.open('/supporting.php','windowNew','width=320, height=400');void(0)">(?)</a></td><td><input type="text" value="[wow=<?php echo $username; ?>]" id="sn-code" readonly></td></tr><br>
+            <tr><td>Direct link</td><td style="padding-bottom:4px"><input type="text" value="http://wowmeter.us/@<?php echo $username; ?>" id="direct-code" readonly></td></tr>
         </table>
         </p>
         <p><a href="/settings" class="button red ico-cog left">Settings</a><a href="/logout.php" class="button blue ico-right right">Logout</a></p>
@@ -358,8 +358,8 @@ if ( $no_script != 1 ) {
     
         WOWMeter is a loosely-tied community where you give and recieve "wows". When someone clicks on your signature, you get a wow, and vise versa. The more wows, the cooler you are. WOWMeter spreads across a variety of communities, especially in forums.
         
-        <br />
-        <br />
+        <br >
+        <br >
 
         <?php
         $getusers_sql         = mysqli_query ( wow ( ), "SELECT * FROM users" );
@@ -388,7 +388,7 @@ if ( $no_script != 1 ) {
         if ( $getwowfrom_number ){
             $hex = $getwowfrom['usrname_color'];
             $wow_from = " by&nbsp;&nbsp;<span style='color:#$hex' class=\"table-color ". $getwowfrom["bg_color"] ." font-". $getwowfrom["sig_font"] ."\"";
-            $wow_from .= "><img src='/images/flags/".strtolower ( $rsGeoData->country_code ).".gif' title='".htmlentities ( $rsGeoData->country_name )."' alt='".htmlentities ( $rsGeoData->country_name )."'/> ".$getwowfrom['username']."</span>";
+            $wow_from .= "><img src='/images/flags/".strtolower ( $rsGeoData->country_code ).".gif' title='".htmlentities ( $rsGeoData->country_name )."' alt='".htmlentities ( $rsGeoData->country_name )."'> ".$getwowfrom['username']."</span>";
         }
 
         if ( $city == $state ) $city == '';
@@ -410,15 +410,15 @@ if ( $no_script != 1 ) {
         <strong><?php echo $getwows_number_all; ?></strong> wows given,<br>
         <strong><?php echo $getwows_number_today; ?></strong> given today.
 
-        <br />
+        <br >
 
         <p>Last wow was given to  <?php
             $hex = $lastwowuser['usrname_color'];
             echo "<span style='color:#$hex' class=\"table-color ". $lastwowuser["bg_color"] ." font-". $lastwowuser["sig_font"] ."\"";
             $rsGeoData_lastusr = geoip_record_by_addr($gi, $lastwowuser['ip']);
             geoip_close($gi);
-            echo "><img src='/images/flags/".strtolower($rsGeoData_lastusr->country_code).".gif' title='".htmlentities($rsGeoData_lastusr->country_name)."' alt='".htmlentities($rsGeoData_lastusr->country_name)."'/> ".$lastwowuser['username']."</span><br><strong title='".$getwows_last['wow_date']."'>".nicetime($getwows_last['wow_date'])."</strong>";
-            if(!isset($wow_from)){echo " from <strong>".$city.$state.$country." <img src='/images/flags/".strtolower($rsGeoData->country_code).".gif' title='".htmlentities($rsGeoData->country_name)."' alt='".htmlentities($rsGeoData->country_name)."'/></strong>";}else{echo $wow_from;} ?>.</p>
+            echo "><img src='/images/flags/".strtolower($rsGeoData_lastusr->country_code).".gif' title='".htmlentities($rsGeoData_lastusr->country_name)."' alt='".htmlentities($rsGeoData_lastusr->country_name)."'> ".$lastwowuser['username']."</span><br><strong title='".$getwows_last['wow_date']."'>".nicetime($getwows_last['wow_date'])."</strong>";
+            if(!isset($wow_from)){echo " from <strong>".$city.$state.$country." <img src='/images/flags/".strtolower($rsGeoData->country_code).".gif' title='".htmlentities($rsGeoData->country_name)."' alt='".htmlentities($rsGeoData->country_name)."'></strong>";}else{echo $wow_from;} ?>.</p>
 
         <h3>Leaderboard</h3>
         <table style="min-width:220px;margin:0 auto;text-align:left">
@@ -434,7 +434,7 @@ if ( $no_script != 1 ) {
             if( $leaderboard['is_banned'] == 1 )
                 echo "<s title='Banned'>";
 
-            echo "<img src='/images/flags/".strtolower ( $rsGeoData->country_code ).".gif' title='".htmlentities ( $rsGeoData->country_name )."' alt='".htmlentities ( $rsGeoData->country_name )."'/> ".$leaderboard["username"];
+            echo "<img src='/images/flags/".strtolower ( $rsGeoData->country_code ).".gif' title='".htmlentities ( $rsGeoData->country_name )."' alt='".htmlentities ( $rsGeoData->country_name )."'> ".$leaderboard["username"];
             
             if( $leaderboard['is_banned'] == 1 )
                 echo "</s>";
