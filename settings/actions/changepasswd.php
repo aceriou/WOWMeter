@@ -1,9 +1,9 @@
 <?php
-require_once '../wow.php';
+require '../../wow.php';
 
 # Login restriction
 if ( !$member_access ) {
-    header ( "Location: ../index.php" );
+    header ( "Location: ../../index.php" );
     exit;
 }
 
@@ -47,14 +47,14 @@ if ( isset ( $_POST['submit'] ) ) {
   
 }
 
-require_once '../header.php';
+require '../header.php';
 ?>
 
 
 <div class="box small" style="width: 85%;">	
 	<div class="title">Change password</div>
 	<form action method="POST">
-	<h6>Please enter your currentpassword and your new password in the form below.</h6><br>
+	<h6>Please enter your current password and your new password in the form below.</h6><br>
 			<input type="password" class="form-control" placeholder="Current password" name="oldpasswd">
 			<input type="password" class="form-control" placeholder="New password" name="newpasswd">
 			<input type="password" class="form-control" placeholder="New password again" name="newpasswdagain">
@@ -63,4 +63,4 @@ require_once '../header.php';
 	</form>
 </div>
 
-<?php $no_script = 1; require_once '../main.php'; ?>
+<?php $no_script = 1; require '../../main.php'; ?>
