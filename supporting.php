@@ -1,4 +1,4 @@
-<?php $login_required = 1; require_once 'header.php'; ?>
+<?php $login_required = 1; require 'header.php'; ?>
 
 	<style type="text/css">
 	.box {
@@ -19,4 +19,4 @@
 	<p>Supporting websites are websites which supports a special BBCode made for WOWMeter. Contact <?php echo CONTACT; ?> to learn how you can support WOWMeter too!</p>
 	<a href="javascript:window.close();window.location='/';void(0)" class="button blue ico-right right">Go back</a>
 	</div>
-<?php $no_script = 1; require_once 'main.php'; ?>
+<?php $no_script = 1; require 'main.php'; ?>
