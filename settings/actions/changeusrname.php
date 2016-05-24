@@ -1,11 +1,11 @@
 <?php
-require_once '../wow.php';
+require '../../wow.php';
 
 $expire = time ( ) + 60 * 60 * 24 * 30;
 
 # Login restriction
 if ( !$member_access ) {
-    header ( "Location: ../index.php" );
+    header ( "Location: ../../" );
     exit;
 }
 
@@ -55,7 +55,7 @@ if ( isset ( $_POST['submit'] ) ) {
   
 }
 
-require_once '../header.php';
+require_once '../../header.php';
 ?>
 
 <div class="box small" style="width: 85%;">	
@@ -79,4 +79,4 @@ require_once '../header.php';
 	</form>
 </div>
 
-<?php $no_script = 1; require_once '../main.php'; ?>
+<?php $no_script = 1; require '../../main.php'; ?>
