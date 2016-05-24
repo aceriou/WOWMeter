@@ -41,7 +41,7 @@ function wow ( ) {
   $db = new mysqli ( $host, $username, $password, $database );
   
   if ( $db->connect_error ) {
-    die ( '<br /><br /><strong>In English:</strong><br />Doge cannot connect to the MySQL database, so instead it went to the moon. <br /><br /> <img src=\'http://revelwallpapers.net/d/735A64776548374C7670323971377143784B4E7632747650375A64766E673D3D/doge-dog-astronaut-meme-moon-landing-earth-planet-flag.jpg\' width=800 height=500></img> ' );
+    die ( '<br><br><strong>In English:</strong><b>Doge cannot connect to the MySQL database, so instead it went to the moon. <br><br> <img src=\'http://revelwallpapers.net/d/735A64776548374C7670323971377143784B4E7632747650375A64766E673D3D/doge-dog-astronaut-meme-moon-landing-earth-planet-flag.jpg\' width=800 height=500></img> ' );
   }
   
   return $db;
@@ -174,7 +174,7 @@ function readableColour ( $bg ) {
 if ( doAjax ( ) ) {
     $ajax_linebreak = "\n";
 } else {
-    $ajax_linebreak = "</br>";
+    $ajax_linebreak = "<br>";
 }
 
 ?>
