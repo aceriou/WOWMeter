@@ -1,6 +1,6 @@
 <?php
 $saddoge = 1;
-require_once 'header.php';
+require 'header.php';
 
 ?>
 	<div class="box small no-title headline">
@@ -13,4 +13,4 @@ require_once 'header.php';
 				<a href="/">Go back to main menu</a>
 			</div>
 
-<?php $no_script = 1; require_once 'main.php' ?>
+<?php $no_script = 1; require 'main.php' ?>
