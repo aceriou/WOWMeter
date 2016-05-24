@@ -1,6 +1,6 @@
 <?php
 $login_required = 1;
-require_once 'header.php';
+require 'header.php';
 ?>
 	<style type="text/css">
 	.box {
@@ -23,4 +23,4 @@ require_once 'header.php';
     <br>
     <a href="javascript:window.close();window.location='/';void(0)" class="button blue ico-right right">Go back</a>
 	</div>
-<?php $no_script = 1; require_once 'main.php'; ?>
+<?php $no_script = 1; require 'main.php'; ?>

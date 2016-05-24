@@ -1,18 +1,17 @@
 <?php
-require_once 'wow.php';
-
+require 'wow.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title><?php echo SITE_NAME; ?></title>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="WOWMeter is a website where you can give and recieve wows to show how cool and awesome you are.">
   <meta name="keywords" content="cute,dog,doge,dogs,funny,kawaii,net,tk,weird,wow,wowmeter">
-  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
-  <link rel="stylesheet" href="/css/main.css" type="text/css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/main.css" type="text/css">
   <link rel="shortcut icon" href="/images/og_image.png">
   <script src="/js/main.js?v=2"></script>
 </head>

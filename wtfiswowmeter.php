@@ -1,4 +1,4 @@
-<?php require_once 'header.php'; ?>
+<?php require 'header.php'; ?>
 <script type="text/javascript">
 	setInterval(function() {
 		$(".tut_pointer").fadeIn(400, function() {
@@ -134,7 +134,7 @@
 		<br>
 		<i>excitement, interest, great pleasure, or the like.</i>
 	</blockquote>
-	<br />
+	<br>
 	A WOW is a token of appreciation, and/or showing interest, in which you can receive from other people by them clicking your WOWMeter signature on message boards, chatrooms, websites, and more.<br><br>
 	<h5>How do I put my own WOWMeter on other sites?</h5>
 	You can use these codes in your signature on forums, or other sites, as well as just send them a direct link, but that doesn't provide an image.
@@ -157,15 +157,15 @@
 				<td style="padding-bottom:4px"><input type="text" value="http://wowmeter.us/@KandyKane" id="direct-code" readonly=""></td>
 			</tr>
 		</tbody>
-	</table><br />
+	</table><br>
 	<h5>How do I customize my WOWMeter signature?</h5>
-	<br />
+	<br>
 	Goto the settings in the "Your WOWMeter" panel. You can customize your WOWMeter signature with a variety of preset backgrounds such as Snoop Dogge, normal Doge, etc, as well as request a custom image. You can also use custom colors and make a totally cool signature such as these:
-	<br /><br />
-	<center>
+	<br><br>
+	<div style="text-align:center;">
 		<sup>These signatures are not clickable!</sup>
-		<br />
+		<br>
 		<img src="https://wowmeter.us/$acerio"></img><img src="https://wowmeter.us/$marioermando"></img><img src="https://wowmeter.us/$justin"></img>
-	</center>
+	</div>
 </div>
-<?php $no_script = 1; require_once 'main.php'; ?>
+<?php $no_script = 1; require 'main.php'; ?>

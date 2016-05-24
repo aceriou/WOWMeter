@@ -2,9 +2,9 @@
 header ( 'Content-Type: image/gif' );
 readfile ( 'mapcache.gif' );
 
-require_once 'wow.php';
-require_once 'geoip/geoipcity.inc';
-require_once 'geoip/geoip.inc';
+require 'wow.php';
+require 'geoip/geoipcity.inc';
+require 'geoip/geoip.inc';
 
 $image  = imagecreatefromgif ( "images/map.gif" );
 $offset = 0;

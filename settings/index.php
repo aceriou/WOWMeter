@@ -1,6 +1,6 @@
 <?php
 $login_required = true;
-require_once '../header.php';
+require '../header.php';
 
 # Signature Settings names
 switch ( $session_array['sig_bg'] ) {
@@ -83,14 +83,14 @@ switch ( $session_array['bg_color'] ) {
 }
 
 # Load GeoIP
-require_once '../geoip/geoipcity.inc';
-require_once '../geoip/geoip.inc';
+require '../geoip/geoipcity.inc';
+require '../geoip/geoip.inc';
 $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
 
 
 ?>
 
-<link rel="stylesheet" href="/css/colpick.css" type="text/css" />
+<link rel="stylesheet" href="/css/colpick.css" type="text/css">
 <script src="/js/colpick.js"></script>
 
 <script type="text/javascript">
@@ -204,14 +204,14 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
 
 </script>
     <div id="preload">
-    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=1"/>
-    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=2"/>
-    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=3"/>
-    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=4"/>
-    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=5"/>
-    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=6"/>
-    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=7"/>
-    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=8"/>
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=1">
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=2">
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=3">
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=4">
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=5">
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=6">
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=7">
+    <img src="http://wowmeter.us/sig/Acerio?mask=1&bg=8">
     </div>
 
     <div class="box small no-title headline">
@@ -264,7 +264,7 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
         <tr><td style="border-right:solid 1px #eee;border-bottom:solid 1px #eee">Reg. Date</td>
         <td style="color:#424854;border-bottom:solid 1px #eee" colspan="2"><?php echo date('Y-m-d', strtotime($session_array['regdate']));?></td></tr>
         <tr><td style="border-right:solid 1px #eee">Country</td>
-        <td style="color:#424854" colspan="2"><?php $rsGeoData = geoip_record_by_addr ( $gi, $session_array['ip'] ); echo "<img src='/images/flags/".strtolower ( $rsGeoData->country_code ) . ".gif' title='".$rsGeoData->country_name."' alt='".$rsGeoData->country_name."'/> ".$rsGeoData->country_name; ?></td></tr>
+        <td style="color:#424854" colspan="2"><?php $rsGeoData = geoip_record_by_addr ( $gi, $session_array['ip'] ); echo "<img src='/images/flags/".strtolower ( $rsGeoData->country_code ) . ".gif' title='".$rsGeoData->country_name."' alt='".$rsGeoData->country_name."'> ".$rsGeoData->country_name; ?></td></tr>
     </table>
     </div>
     </div>
@@ -274,7 +274,7 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
         <div class="member-card">
     <table>
         <tr><td colspan="3" style="border-bottom:solid 1px #eee;position:relative;">
-            <img src="/sig/<?php echo $username; ?>?mask=1&bg=<?php echo $bg_name;?>" style="position: relative;width:240px;height:66px;z-index: 1;" id="selected_bg"/>
+            <img src="/sig/<?php echo $username; ?>?mask=1&bg=<?php echo $bg_name;?>" style="position: relative;width:240px;height:66px;z-index: 1;" id="selected_bg">
             <div style="position: absolute;top: 0;left: 5px;width: 96%;height: 20px;background: #<?php echo $session_array['usrname_color']; ?>" id="usrname_color"></div>
             <div style="position: absolute;top: 20px;left: 5px;width: 96%;height: 42px;background: #<?php echo $session_array['text_color']; ?>" id="text_color"></div>
             
@@ -286,14 +286,14 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
     <span id="selected_bg_name"><?php echo $bg_namee; ?></span> <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-      <li><a href="javascript:change_bg(1, 'Normal doge');void(0)" title="Normal doge"><img src="/images/bg/1.png" alt="Normal doge"/><br/>Normal doge</a></li>
-      <li><a href="javascript:change_bg(2, '8-bit doge');void(0)" title="8-bit doge"><img src="/images/bg/2.png" alt="8-bit doge"/><br/>8-bit doge</a></li>
-      <li><a href="javascript:change_bg(3, 'Neko doge');void(0)" title="Neko doge"><img src="/images/bg/3.png" alt="Neko doge"/><br/>Neko doge</a></li>
-      <li><a href="javascript:change_bg(4, 'Flandre Scarlet doge');void(0)" title="Flandre Scarlet doge"><img src="/images/bg/4.png" alt="Flandre Scarlet doge"/><br/>Flandre Scarlet doge</a></li>
-      <li><a href="javascript:change_bg(5, 'Snoop Dogge');void(0)" title="Snoop Dogge"><img src="/images/bg/5.png" alt="Snoop Dogge"/><br/>Snoop Dogge</a></li>
-      <li><a href="javascript:change_bg(6, 'Toontown doge');void(0)" title="Toontown doge"><img src="/images/bg/6.png" alt="Toontown doge"/><br/>Toontown doge</a></li>
-      <li><a href="javascript:change_bg(7, 'Cartoon doge');void(0)" title="Cartoon doge"><img src="/images/bg/7.png" alt="Cartoon doge"/><br/>Cartoon doge</a></li>
-      <?php if ( !empty ( $session_array['sig_url'] ) ) { ?><li><a href="javascript:change_bg(8, 'Uploaded Background');void(0)" title="Uploaded Background"><img src="<?php echo $session_array['sig_url']; ?>" height="66" width="240" alt="Uploaded Background"/><br/>Uploaded Background</a></li><?php } ?>
+      <li><a href="javascript:change_bg(1, 'Normal doge');void(0)" title="Normal doge"><img src="/images/bg/1.png" alt="Normal doge"><br>Normal doge</a></li>
+      <li><a href="javascript:change_bg(2, '8-bit doge');void(0)" title="8-bit doge"><img src="/images/bg/2.png" alt="8-bit doge"><br>8-bit doge</a></li>
+      <li><a href="javascript:change_bg(3, 'Neko doge');void(0)" title="Neko doge"><img src="/images/bg/3.png" alt="Neko doge"><br>Neko doge</a></li>
+      <li><a href="javascript:change_bg(4, 'Flandre Scarlet doge');void(0)" title="Flandre Scarlet doge"><img src="/images/bg/4.png" alt="Flandre Scarlet doge"><br>Flandre Scarlet doge</a></li>
+      <li><a href="javascript:change_bg(5, 'Snoop Dogge');void(0)" title="Snoop Dogge"><img src="/images/bg/5.png" alt="Snoop Dogge"><br>Snoop Dogge</a></li>
+      <li><a href="javascript:change_bg(6, 'Toontown doge');void(0)" title="Toontown doge"><img src="/images/bg/6.png" alt="Toontown doge"><br>Toontown doge</a></li>
+      <li><a href="javascript:change_bg(7, 'Cartoon doge');void(0)" title="Cartoon doge"><img src="/images/bg/7.png" alt="Cartoon doge"><br>Cartoon doge</a></li>
+      <?php if ( !empty ( $session_array['sig_url'] ) ) { ?><li><a href="javascript:change_bg(8, 'Uploaded Background');void(0)" title="Uploaded Background"><img src="<?php echo $session_array['sig_url']; ?>" height="66" width="240" alt="Uploaded Background"><br>Uploaded Background</a></li><?php } ?>
   </ul>
 </div></td></tr>
         <tr><td style="border-right:solid 1px #eee;border-bottom:solid 1px #eee">
@@ -378,4 +378,4 @@ $gi = geoip_open ( '../geoip/GeoLiteCity.dat', GEOIP_STANDARD );
     </form>
     </div>
 
-<?php $no_script = 1; require_once '../main.php'; ?>
+<?php $no_script = 1; require '../main.php'; ?>

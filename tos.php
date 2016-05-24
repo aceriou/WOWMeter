@@ -1,4 +1,4 @@
-<?php require_once 'header.php'; ?>
+<?php require 'header.php'; ?>
 
 	<div class="box small no-title headline">
 	<h1>WOWMeter Terms of Service</h1>
@@ -16,4 +16,4 @@
 			<p><strong>Contact us</strong><br />If you have any questions about this agreement, please contact us at <a href="mailto:<?php echo CONTACT; ?>"><?php echo CONTACT; ?></a>.</p>
 			<p><a href="/">Go back</a></p>
 				</div>
-<?php $no_script = 1; require_once 'main.php'; ?>
+<?php $no_script = 1; require 'main.php'; ?>

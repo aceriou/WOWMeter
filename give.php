@@ -1,6 +1,6 @@
 <?php
-require_once 'wow.php';
-require_once 'header.php';
+require 'wow.php';
+require 'header.php';
 
 $wow      = doSafe ( $_GET['wow'] );
 
@@ -126,4 +126,4 @@ $( document ).ready ( function ( ) {
     </div>
     <?php if ( isset ( $onlyenglish ) ) echo "<p style='color:#555'>$onlyenglish</p>"; ?>
 
-<?php require_once "main.php"; ?>
+<?php require "main.php"; ?>

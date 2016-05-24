@@ -1,5 +1,5 @@
 <?php
-require_once 'wow.php';
+require 'wow.php';
 
 # Variables
 $username = doSafe ( $_POST ['username'] );
@@ -13,7 +13,7 @@ $email_sql   = "SELECT username FROM users WHERE email = '".$email."'";
 $members     = mysqli_query ( wow ( ), $name_sql ); 
 $ip_check    = mysqli_query ( wow ( ), $ip_sql );
 $email_check = mysqli_query ( wow ( ), $email_sql );
-$name_check  = mysqli_fetch_array ( $members ); 
+$name_check  = mysqli_fetch_assoc ( $members ); 
 $name        = mysqli_num_rows ( $members ); 
 $ip_addr     = mysqli_num_rows ( $ip_check );
 $email_addr  = mysqli_num_rows ( $email_check );
@@ -59,7 +59,7 @@ setcookie ( "password", $password, $expire, "/" );
 if ( doAjax ( ) ) {
     die('success');
 } else {
-    header("Location: index.php");
+    header("Location: /");
 }
 
 ?>

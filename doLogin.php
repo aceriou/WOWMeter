@@ -1,5 +1,5 @@
 <?php
-require_once 'wow.php';
+require 'wow.php';
 
 # Variables
 $username = doSafe ( $_POST['username'] );
@@ -36,5 +36,5 @@ setcookie ( "password", $password, $expire, "/" );
 if ( doAjax ( ) ) {
     die('success');
 } else {
-    header("Location: index.php");
+    header("Location: /");
 }
