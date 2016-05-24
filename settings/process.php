@@ -1,9 +1,9 @@
 <?php
-require_once '../wow.php';
+require '../wow.php';
 
 # Login restriction
 if ( !$member_access ) {
-    header ( "Location: ../index.php" );
+    header ( "Location: ../" );
     exit;
 }
 
