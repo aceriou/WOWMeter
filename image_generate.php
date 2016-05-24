@@ -1,5 +1,5 @@
 <?php
-require_once 'wow.php';
+require 'wow.php';
 
 # Set the Content-Type
 header( 'Content-Type: image/png' );
