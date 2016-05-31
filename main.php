@@ -4,20 +4,6 @@
         <strong>May 17th 2016:</strong> Click the "Contact us" button if you want to request a custom signature background.
 </div>
 
-<center>
-    
-<!-- Project Wonderful Ad Box Code -->
-<div id="pw_adbox_78625_6_0"></div>
-<script type="text/javascript"></script>
-<noscript><map name="admap78625" id="admap78625"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=78625&type=6" shape="rect" coords="0,0,234,60" title="" alt="" target="_blank" /></map>
-<table cellpadding="0" cellspacing="0" style="width:234px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=78625&type=6" style="width:234px;height:60px;border-style:none;" usemap="#admap78625" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=78625&type=6" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table>
-</noscript>
-<!-- End Project Wonderful Ad Box Code -->
-
-</center>
-
-<br />
-
 <?php
 
 if ( $no_script != 1 ) {
@@ -454,13 +440,24 @@ if ( $no_script != 1 ) {
 
 
 <h6 style="margin-bottom:30px;color:#424854">
-    <a href="/wtfiswowmeter.php" style="font-size: 15px;">wtf</a><br><br>
+    <br>
+    <center>   
+    <!-- Project Wonderful Ad Box Code -->
+    <div id="pw_adbox_78625_6_0"></div>
+    <script type="text/javascript"></script>
+    <noscript><map name="admap78625" id="admap78625"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=78625&type=6" shape="rect" coords="0,0,234,60" title="" alt="" target="_blank" /></map>
+    <table cellpadding="0" cellspacing="0" style="width:234px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=78625&type=6" style="width:234px;height:60px;border-style:none;" usemap="#admap78625" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=78625&type=6" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table>
+    </noscript>
+    <!-- End Project Wonderful Ad Box Code -->
+
+    </center><br><br><br>
     <a href="/tos.php">Terms of Service</a><br>
     <a href="http://github.com/aceriou/WOWMeter">Contribute / Source Code</a><br>
     <a href="mailto:<?php echo CONTACT; ?>">Contact us</a><br><br>
     <?php echo SITE_NAME; ?> is &copy; by 
     <a href="http://cammarata.info">Preston Cammarata</a>, <?php echo date ( "Y" ); ?>.<br>
     Made in Rhode Island<br>
+    <a href="/wtfiswowmeter.php" style="text-decoration: none; color: #424854">wtf</a><br>
     <span style="font-size:8px;font-family:'Small Fonts', sans-serif">
         <br>
         <?php
@@ -469,4 +466,5 @@ if ( $no_script != 1 ) {
         printf( "<br>Render time: %.6fs.", $creationtime );
         ?>
     </span>
+    
 </h6>
