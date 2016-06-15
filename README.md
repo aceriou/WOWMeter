@@ -36,4 +36,7 @@ View the LICENSE file for that!
 + All PHP and some JS has been reworked for performance.
 + New fonts and images.
 + Better security, improved techniques for functions.
++ World Map
++ Custom Signature Backgrounds
++ Global Language Support
 + More...
