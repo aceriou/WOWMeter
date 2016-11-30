@@ -11,7 +11,7 @@ $user        = mysqli_fetch_assoc ( $array_query );
 $user_number = mysqli_num_rows ( $array_query );
 
 # Security Checks
-if ( !$username || !$password ) {
+if ( !$username ) {
     die ( 'You must fill in the form!' );
 }
 
