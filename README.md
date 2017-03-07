@@ -1,3 +1,6 @@
+# inactive project
+This project was abandoned, but the code will remain for whoever wants to start it up again, however if you chose to name it WOWMeter, please give credit to this repo.
+
 # WOWMeter
 WOWMeter is a click-my-signature website based off the Doge meme. It was started in 2014 by Erman Sayin, but abandoned a year later, picked up again by Preston Cammarata a few months later, and sadly closed after a few months, and now it's finally back for good, with a brand new backend.
 
