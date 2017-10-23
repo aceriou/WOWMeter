@@ -1,5 +1,5 @@
 # inactive project
-This project was abandoned, but the code will remain for whoever wants to start there own clickme site. Please don't host an exact replica of WOWMeter though, this serves as a base.
+This project was abandoned, but the code will remain for whoever wants to start their own clickme site. Please don't host an exact replica of WOWMeter though, this serves as a base.
 
 This is sad. It was a good 3 years... 
 
